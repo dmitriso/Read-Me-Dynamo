@@ -1,6 +1,7 @@
 //global variables to require needed packages
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // array of questions for user
 const questions = [
@@ -28,7 +29,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices:['MIT','IBM','Mozilla'],
+        choices: ['MIT', 'IBM', 'Mozilla'],
 
     },
     {
@@ -51,30 +52,29 @@ const questions = [
         name: 'contribute',
         message: 'What information is required to know about contributions to the repo?'
     },
-
-
 ];
 
 
 // function to write README file
-function writeToFile(, data) {
-//     const userFile = `${data.title.toLowerCase().split('').join('')}.json}`;
+function writeToFile(fileName, data) {
+    fs.writeFile(`./sample/${fileName}`,data, (err) =>{
+        err ? console.error(err) :
+         console.log('Success!')
+    });
 
-//    fs.writeFile(userFile,JSON.stringify(response, null, '\t'), (err) =>
-//    err ? console.error(err) : console.log('Success!'))
 }
 
 // function to initialize program
 function init() {
-inquirer.prompt(questions).then((data) => {
-    console.log(JSON.stringify(data, null, '  '));
-  });
+    inquirer.prompt(questions).then((data) => {
+        console.log(JSON.stringify(data, null, '  '));
+         writeToFile('README.md',generateMarkdown(data));
+    });
+
 }
 
 // function call to initialize program
 init();
-
-
 
 
 
