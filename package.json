@@ -1,0 +1,23 @@
+{
+  "name": "read-me-dynamo",
+  "version": "1.0.0",
+  "description": "Generates a read me file based off user input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitriso/Read-Me-Dynamo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitriso/Read-Me-Dynamo/issues"
+  },
+  "homepage": "https://github.com/dmitriso/Read-Me-Dynamo#readme",
+  "dependencies": {
+    "chalk-pipe": "^4.0.0",
+    "inquirer": "^7.3.3"
+  }
+}
