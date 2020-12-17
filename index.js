@@ -58,7 +58,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(, data) {
-    // const userFile = `${data.title.toLowerCase().split('').join('')}.json}`;
+//     const userFile = `${data.title.toLowerCase().split('').join('')}.json}`;
 
 //    fs.writeFile(userFile,JSON.stringify(response, null, '\t'), (err) =>
 //    err ? console.error(err) : console.log('Success!'))
