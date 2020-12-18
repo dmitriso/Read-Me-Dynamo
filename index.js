@@ -7,6 +7,11 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const questions = [
     {
         type: 'input',
+        name: 'name',
+        message: 'What would you like to name this read me file?'
+    },
+    {
+        type: 'input',
         name: 'github',
         message: 'What is your GitHub username?'
     },
@@ -88,7 +93,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`./new-README/${fileName}`,data, (err) =>{
+    fs.writeFile(`${fileName}`,data, (err) =>{
         err ? console.error(err) :
          console.log('Success!')
     });
@@ -99,7 +104,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, '  '));
-         writeToFile('README.md',generateMarkdown(data));
+        const userFile = `${data.name.toLowerCase().split('').join('')}.md`;
+         writeToFile(userFile,generateMarkdown(data));
     });
 
 }
