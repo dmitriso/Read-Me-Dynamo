@@ -29,7 +29,38 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices: ['MIT', 'IBM', 'Mozilla'],
+        choices: [
+            {
+                key:'mitBadge',
+                name: 'MIT',
+                value :`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+            },
+            {
+                key:'ibmBadge',
+                name: 'IBM',
+                value :`[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`,
+            },
+            {
+                key:'iscBadge',
+                name: 'ISC',
+                value :`[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
+            },
+            {
+                key:'mozillaBadge',
+                name: 'Mozilla',
+                value :`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,
+            },
+            {
+                key:'bsdBadge',
+                name: 'BSD',
+                value :`[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
+            },
+            {
+                key:'apacheBadge',
+                name: 'Apache',
+                value :`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+            },
+        ],
 
     },
     {
