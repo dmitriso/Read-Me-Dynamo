@@ -36,34 +36,25 @@ const questions = [
         message: 'What kind of license should your project have?',
         choices: [
             {
-                key:'mitBadge',
+                key: 'mitBadge',
                 name: 'MIT',
-                value :`[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
-            },
-            {
-                key:'ibmBadge',
-                name: 'IBM',
-                value :`[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`,
-            },
-            {
-                key:'iscBadge',
-                name: 'ISC',
-                value :`[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
+                value: ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', `This is licensed under MIT License Copyright (c) [year] [fullname]`],
+
             },
             {
                 key:'mozillaBadge',
                 name: 'Mozilla',
-                value :`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,
+                value :[`[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,`This is licensed under Mozilla Public License Version 2.0`],
             },
             {
                 key:'bsdBadge',
                 name: 'BSD',
-                value :`[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,
+                value :[`[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)`,`This is licensed under Copyright 1994-2004 The FreeBSD Project. All rights reserved.`],
             },
             {
-                key:'apacheBadge',
+                key: 'apacheBadge',
                 name: 'Apache',
-                value :`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+                value: [`[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`, `This is licensed under Apache License Version 2.0, January 2004 http://www.apache.org/licenses/`],
             },
         ],
 
@@ -93,9 +84,9 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`${fileName}`,data, (err) =>{
+    fs.writeFile(`${fileName}`, data, (err) => {
         err ? console.error(err) :
-         console.log('Success!')
+            console.log('Success!')
     });
 
 }
@@ -105,7 +96,7 @@ function init() {
     inquirer.prompt(questions).then((data) => {
         console.log(JSON.stringify(data, null, '  '));
         const userFile = `${data.name.toLowerCase().split('').join('')}.md`;
-         writeToFile(userFile,generateMarkdown(data));
+        writeToFile(userFile, generateMarkdown(data));
     });
 
 }

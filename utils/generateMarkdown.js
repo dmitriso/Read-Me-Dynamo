@@ -2,9 +2,8 @@
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ### License
 
-${data.license}
+${data.license[0]}
 
 ## Table of Contents
 
@@ -45,6 +44,10 @@ ${data.contribute}
 [GitHub](https://github.com/${data.github})
 
 Email: ${data.email}
+
+### License
+
+${data.license[1]}
 
 `;
 }
