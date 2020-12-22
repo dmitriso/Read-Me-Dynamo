@@ -13,8 +13,6 @@
 
 * [Usage](##Usage)
 
-* []()
-
 * [Technologies](##Technologies)
 
 * [URL's](##URL's)
@@ -40,6 +38,7 @@
 <details>
 
 <summary>Clone-Repository-Gif</summary>
+
 ![Clone-RepositoryGf](./assets/gifs/Read-Me-Dynamo1.gif)
 
 </details>
@@ -53,6 +52,7 @@
 <details>
 
 <summary>Installation-Gif</summary>
+
 ![Installation-Gif](./assets/gifs/Read-Me-Dynamo2.gif)
 
 </details>
@@ -72,6 +72,7 @@
 <details>
 
 <summary>Usage-Gif</summary>
+
 ![Usage-Gif](./assets/gifs/Read-Me-Dynamo3.gif)
 
 </details>
